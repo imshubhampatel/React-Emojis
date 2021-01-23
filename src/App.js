@@ -33,7 +33,7 @@ export default function App() {
     if (event.target.value === "") {
       meaning = "";
     } else if (meaning === undefined) {
-      meaning = "We do not have this in out database :(";
+      meaning = "We do not have this in our database :(";
     }
     setMeaning(meaning);
   }
@@ -43,10 +43,12 @@ export default function App() {
   }
   return (
     <div className="App">
-      <h1 id="Heading">Emoji-Encylopedia</h1>
-      <img id="Wallpaper" src={bg} alt="Wallpaper"></img>
       <div className="container">
+        <h1 id="Heading">Emoji-Scanner</h1>
+        <img id="Wallpaper" src={bg} alt="Wallpaper"></img>
         <h2 id="Suggestion"> Suggestions</h2>
+      </div>
+      <div className="container emoji">
         {suggestions.map(function (emoji) {
           return (
             <span
@@ -54,21 +56,26 @@ export default function App() {
               key={emoji}
               id="Emojis"
             >
-              {emoji}
+              {" "}
+              {emoji}{" "}
             </span>
           );
         })}
       </div>
-      <div className="emoji-text">
+      <div className="emoji-text container">
         <input
-          placeholder="Copy paste your emoji here..."
+          type="searchbox"
+          placeholder="Detect your emoji here..."
           onChange={onchangeHandler}
         ></input>
       </div>
-      <h2 id="output-text">
-        According to Emoji-pedia it means:{" "}
-        <span id="output-meaning">{meaning}</span>
-      </h2>
+      <div className="output">
+        <h2 id="output-text">
+          {" "}
+          According to Emoji-Scanner means:{" "}
+          <span id="output-meaning">{meaning} </span>{" "}
+        </h2>
+      </div>
     </div>
   );
 }
