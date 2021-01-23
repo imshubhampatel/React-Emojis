@@ -45,7 +45,7 @@ export default function App() {
     <div className="App">
       <h1 id="Heading">Emoji-Encylopedia</h1>
       <img id="Wallpaper" src={bg} alt="Wallpaper"></img>
-      <div className="center-container">
+      <div className="container">
         <h2 id="Suggestion"> Suggestions</h2>
         {suggestions.map(function (emoji) {
           return (
